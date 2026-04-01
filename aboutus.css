@@ -19,27 +19,9 @@
 body {
   font-family: 'Inter', system-ui, sans-serif;
   position: relative;
-  isolation: isolate;
   background: var(--bg-main);
   color: var(--text-main);
   line-height: 1.6;
-}
-
-/* Subtle side aura + vignette (global background) */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(920px 560px at 0% 55%, rgba(124,58,237,0.20), transparent 60%),
-    radial-gradient(920px 560px at 100% 45%, rgba(167,139,250,0.16), transparent 60%),
-    radial-gradient(940px 560px at 50% -10%, rgba(91,33,182,0.12), transparent 62%),
-    radial-gradient(1200px 700px at 50% 120%, rgba(0,0,0,0.52), transparent 55%),
-    radial-gradient(1100px 700px at -10% 50%, rgba(0,0,0,0.44), transparent 52%),
-    radial-gradient(1100px 700px at 110% 50%, rgba(0,0,0,0.44), transparent 52%);
-  opacity: 0.95;
 }
 
 /* Smooth blend from hero into global page background (About us) */
