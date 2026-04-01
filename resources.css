@@ -715,12 +715,28 @@ nav {
   }
 
   .resource-panel__top h3 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .resource-panel__icon {
     width: 62px;
     height: 62px;
+  }
+
+  .resource-panel__top p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .resource-panel__links {
+    row-gap: 14px;
+    margin-top: 18px;
+  }
+
+  .resource-panel__links a {
+    min-height: 72px;
+    padding: 16px 18px;
+    border-radius: 18px;
   }
 }
 
@@ -822,10 +838,16 @@ footer {
 
   .nav-links {
     gap: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    padding-bottom: 2px;
   }
 
   .nav-links a {
     font-size: 13px;
+    flex: 0 0 auto;
   }
 
   .logo {
@@ -872,6 +894,28 @@ footer {
 
   .cta-box h3 {
     font-size: 26px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-inner {
+    height: 70px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .resources-hero {
+    padding: 72px 0 44px;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+  }
+
+  .hero-text {
+    font-size: 15px;
   }
 }
 
