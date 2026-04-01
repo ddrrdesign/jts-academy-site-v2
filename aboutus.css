@@ -33,13 +33,13 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(900px 520px at 0% 55%, rgba(124,58,237,0.16), transparent 60%),
-    radial-gradient(900px 520px at 100% 45%, rgba(167,139,250,0.12), transparent 60%),
-    radial-gradient(900px 520px at 50% -10%, rgba(91,33,182,0.10), transparent 62%),
-    radial-gradient(1200px 700px at 50% 120%, rgba(0,0,0,0.55), transparent 55%),
-    radial-gradient(1100px 700px at -10% 50%, rgba(0,0,0,0.48), transparent 52%),
-    radial-gradient(1100px 700px at 110% 50%, rgba(0,0,0,0.48), transparent 52%);
-  opacity: 0.9;
+    radial-gradient(920px 560px at 0% 55%, rgba(124,58,237,0.20), transparent 60%),
+    radial-gradient(920px 560px at 100% 45%, rgba(167,139,250,0.16), transparent 60%),
+    radial-gradient(940px 560px at 50% -10%, rgba(91,33,182,0.12), transparent 62%),
+    radial-gradient(1200px 700px at 50% 120%, rgba(0,0,0,0.52), transparent 55%),
+    radial-gradient(1100px 700px at -10% 50%, rgba(0,0,0,0.44), transparent 52%),
+    radial-gradient(1100px 700px at 110% 50%, rgba(0,0,0,0.44), transparent 52%);
+  opacity: 0.95;
 }
 
 /* LAYOUT */
