@@ -54,6 +54,12 @@ a {
   color: #c084fc;
 }
 
+/* Make FIRST white only in FIRST Leadership Award tab/panel */
+.resource-tab[data-target="first-leadership-award"] .first-word,
+#first-leadership-award .first-word {
+  color: #ffffff;
+}
+
 /* LAYOUT */
 .container {
   width: min(var(--container), calc(100% - 48px));
