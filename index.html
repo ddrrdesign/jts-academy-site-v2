@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FIRST JTS 27772</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo"><span class="first-word">FIRST</span> JTS Academy</div>
+
+    <div class="nav-links">
+      <a href="index.html" class="active">Academy</a>
+      <a href="resources.html">Resources</a>
+      <a href="aboutus.html">About us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero hero-bg">
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <h1> <span class="first-word">FIRST</span> JTS Academy</h1>
+
+    <p class="hero-lead">
+      FIRST JTS Academy is an educational robotics platform built by an active <span>FIRST</span> team.
+      We help students grow through real competition experience, teamwork, and engineering thinking.
+    </p>
+
+    <p class="hero-sub">
+      This platform was created to support students, teams, and mentors by sharing knowledge,
+      resources, and hands-on experience across <span class="first-word">FIRST</span> programs - from first steps in STEM
+      to international competitions.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="resources.html" class="btn primary">View resources</a>
+    </div>
+  </div>
+</header>
+
+
+  <!-- HERO CAROUSEL -->
+<section class="hero-carousel">
+  <div class="carousel-track">
+
+    <img src="images/hero1.jpg" class="square" alt="">
+    <img src="images/hero2.jpg" class="rect" alt="">
+    <img src="images/hero3.jpg" class="rect" alt="">
+    <img src="images/hero4.jpg" class="square" alt="">
+    <img src="images/hero5.jpg" class="rect" alt="">
+    <img src="images/hero6.jpg" class="rect" alt="">
+    <img src="images/hero7.jpg" class="square" alt="">
+
+  </div>
+</section>
+
+  </div>
+</header>
+
+<section class="about">
+  <div class="container">
+    <h2>About <span class="first-word">FIRST</span> JTS Academy</h2>
+
+    <p class="about-intro">
+      <span class="first-word">FIRST</span> JTS Academy is a robotics and STEM education platform for students aged 6–18.
+      We work with FIRST programs and focus on real competition experience, teamwork,
+      and engineering thinking.
+  <section class="about">
+
+    <section class="about">
+  <div class="container">
+
+    <div class="about-cards">
+
+      <!-- CARD 1 -->
+      <div class="about-card">
+        <h3>Who is it for</h3>
+        <p>
+          Students aged 6–18 interested in robotics and technology.
+        </p>
+        <p class="extra">
+          Our academy is designed for motivated students who want more than theory.
+          We help them grow from basic robotics to real competition-level engineering.
+        </p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="about-card">
+        <h3>How we teach</h3>
+        <p>
+          Hands-on learning through projects and teamwork.
+        </p>
+        <p class="extra">
+          Students design, build, test, fail, improve, and learn how engineering
+          works in practice - not just in theory.
+        </p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="about-card">
+        <h3>Competition focus</h3>
+        <p>
+          Preparation for official <span class="first-word">FIRST</span> competitions.
+        </p>
+        <p class="extra">
+          We train teams for regional and international competitions, including strategy,
+          robot design, documentation, teamwork, and judging.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.about {
+  padding: 80px 0;
+  background: #0b0b0b;
+  color: white;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.about-card {
+  background: #111;
+  padding: 26px;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* GLOW FOLLOW */
+.about-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%),
+    rgba(168, 85, 247, 0.25),
+    transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* HOVER */
+.about-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border: 1px solid #a855f7;
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.35),
+              0 20px 40px rgba(0,0,0,0.6);
+}
+
+.about-card:hover::before {
+  opacity: 1;
+}
+
+/* TEXT */
+.about-card h3 {
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.about-card:hover h3 {
+  color: #c084fc;
+}
+
+.about-card p {
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.extra {
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+/* ACCENT */
+.first-word {
+  color: #c084fc;
+  font-weight: 600;
+}
+</style>
+
+<script>
+/* FOLLOW CURSOR EFFECT */
+document.querySelectorAll('.about-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+    card.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+  });
+});
+</script>
+
+<!-- PROGRAMS -->
+<section>
+  <div class="container">
+    <h2> <span class="first-word">FIRST</span> Programs</h2>
+
+    <div class="grid">
+
+  <a
+    href="https://www.firstinspires.org/programs/choose-a-program"
+    target="_blank"
+    class="program-link"
+  >
+    <div class="card program-card">
+      <img src="images/fll-explore.jpg"/>
+      
+      <h3> <span class="first-word">FIRST</span> LEGO League Explore</h3>
+      <p>Ages 6–10. Creativity, teamwork, and first steps in STEM.</p>
+    </div>
+
+  </a>
+
+  <a
+    href="https://www.firstinspires.org/programs/choose-a-program"
+    target="_blank"
+    class="program-link"
+  >
+    <div class="card program-card">
+      <img src="images/fll-challenge.jpg"/>
+      
+      <h3> <span class="first-word">FIRST</span> LEGO League Challenge</h3>
+      <p>Ages 9–16. Robot design, programming, and innovation project.</p>
+    </div>
+  </a>
+
+  <a
+    href="https://www.firstinspires.org/programs/choose-a-program"
+    target="_blank"
+    class="program-link"
+  >
+    <div class="card program-card">
+      <img src="images/ftc.jpg"/>
+      <h3> <span class="first-word">FIRST</span> Tech Challenge</h3>
+      <p>Ages 12–18. Engineering, strategy, and real robotics competitions.</p>
+    </div>
+  </a>
+
+</div>
+
+</section>
+
+<!-- WHO WE SUPPORT -->
+<section class="support-section">
+  <div class="container">
+    <div class="support-header">
+      <h2>Who we support</h2>
+      <p>
+        For everyone interested in robotics and <span class="first-word">FIRST</span> -
+        students, teams, mentors, and future competitors.
+      </p>
+    </div>
+
+    <div class="support-grid">
+
+      <article class="support-item">
+        <img src="images/support-2.jpg" alt="FLL teams" />
+        <div class="support-item__content">
+          <span class="support-badge">FLL</span>
+          <h3>FLL teams</h3>
+          <p>Interview prep, robot game support, and competition confidence.</p>
+        </div>
+      </article>
+
+      <article class="support-item">
+        <img src="images/support-3.jpg" alt="FTC teams" />
+        <div class="support-item__content">
+          <span class="support-badge">FTC</span>
+          <h3>FTC teams</h3>
+          <p>Programming, robot design, presentations, and portfolio support.</p>
+        </div>
+      </article>
+
+      <article class="support-item">
+        <img src="images/support-4.jpg" alt="Mentors" />
+        <div class="support-item__content">
+          <span class="support-badge">Mentors</span>
+          <h3>Mentors</h3>
+          <p>Structured materials, guidance, and practical team support.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ЭФФЕКТ СЛЕДОВАНИЯ МЫШКИ */
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    card.style.setProperty('--x', x + 'px');
+    card.style.setProperty('--y', y + 'px');
+  });
+});
+</script>
+
+<!-- RESULTS -->
+<section class="results-section">
+  <div class="container">
+    <div class="results-header">
+      <h2>Results</h2>
+      <p>Competition results of teams trained in our academy.</p>
+    </div>
+
+    <div class="results-list">
+
+      <!-- CARD 1 -->
+      <div class="result-card">
+        <div class="result-image">
+          <img src="images/images:res-1.jpg" alt="RassLexx Team" />
+        </div>
+
+        <div class="result-content">
+          <h3>RassLexx Team</h3>
+          <p class="event">FIRST Lego League World Championship</p>
+          <p class="award">Core Values Coopertition Award Winner</p>
+
+          <div class="result-labels">
+            <span class="result-label">World Championship</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="result-card">
+        <div class="result-image">
+          <img src="images/images:res-2.jpg" alt="TOLEBI_DARYN" />
+        </div>
+
+        <div class="result-content">
+          <h3>TOLEBI_DARYN</h3>
+          <p class="event">Central Asia FIRST Championship'26</p>
+          <p class="award">Champion’s Award Winner, 3rd Place</p>
+
+          <div class="result-labels">
+            <span class="result-label">Central Asia 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="result-card">
+        <div class="result-image">
+          <img src="images/images:res-3.jpg" alt="Astrix" />
+        </div>
+
+        <div class="result-content">
+          <h3>Astrix</h3>
+          <p class="event">Central Asia FIRST Championship'26</p>
+          <p class="award">Robot Design Finalist</p>
+
+          <div class="result-labels">
+            <span class="result-label">Central Asia 2026</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.results-section {
+  padding: 90px 0;
+  background: #0b0b0b;
+  color: white;
+}
+
+.results-header {
+  margin-bottom: 32px;
+}
+
+.results-header h2 {
+  margin: 0 0 10px;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.results-header p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.result-card {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+.result-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(168, 85, 247, 0.16),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.result-card:hover {
+  transform: translateY(-6px);
+  border-color: #a855f7;
+  box-shadow:
+    0 0 26px rgba(168, 85, 247, 0.18),
+    0 22px 45px rgba(0, 0, 0, 0.45);
+}
+
+.result-card:hover::before {
+  opacity: 1;
+}
+
+.result-image {
+  position: relative;
+  min-height: 240px;
+  overflow: hidden;
+}
+
+.result-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.result-card:hover .result-image img {
+  transform: scale(1.05);
+}
+
+.result-content {
+  padding: 30px 30px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result-content h3 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  line-height: 1.15;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.result-card:hover .result-content h3 {
+  color: #d8b4fe;
+}
+
+.result-content .event {
+  margin: 0 0 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.76);
+}
+
+.result-content .award {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.94);
+  font-weight: 500;
+}
+
+.result-labels {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.result-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(168, 85, 247, 0.14);
+  border: 1px solid rgba(192, 132, 252, 0.18);
+  color: #d8b4fe;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 900px) {
+  .result-card {
+    grid-template-columns: 1fr;
+  }
+
+  .result-image {
+    min-height: 220px;
+  }
+
+  .result-content {
+    padding: 24px 22px 22px;
+  }
+
+  .result-content h3 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .results-section {
+    padding: 70px 0;
+  }
+
+  .results-header h2 {
+    font-size: 32px;
+  }
+
+  .result-image {
+    min-height: 200px;
+  }
+
+  .result-content .award {
+    font-size: 17px;
+  }
+}
+</style>
+
+<script>
+document.querySelectorAll('.result-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+    card.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+  });
+});
+</script>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 <span class="first-word">FIRST</span> JTS Academy. Built by JTS #27772 for the FIRST community.
+</footer>
+<script>
+  console.log("FIRST JTS Academy loaded");
+
+  document.querySelectorAll(".about-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const isOpen = card.classList.contains("open");
+
+      // закрываем все
+      document.querySelectorAll(".about-card").forEach(c => {
+        c.classList.remove("open");
+      });
+
+      // если текущая была закрыта — открываем
+      if (!isOpen) {
+        card.classList.add("open");
+      }
+    });
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.support-item').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+    });
+  });
+</script>
+
+</body>
+</html>
