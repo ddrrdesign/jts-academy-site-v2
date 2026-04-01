@@ -70,6 +70,20 @@ header + section::before {
   background: linear-gradient(to bottom, rgba(11,11,15,0.82), transparent);
 }
 
+header + section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 32px;
+  right: 32px;
+  height: 1px;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.16),
+    0 0 22px rgba(167, 139, 250, 0.14);
+}
+
 img {
   max-width: 100%;
   display: block;
