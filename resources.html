@@ -115,7 +115,7 @@
 
     
     <!-- PANELS -->
-    <div class="resource-panels">
+    <div class="resource-panels" id="resource-panels">
 
       <!-- OFFICIAL SITES -->
       <article class="resource-panel active" id="official-sites" role="tabpanel">
@@ -716,6 +716,9 @@
   const resourceTabs = document.querySelectorAll('.resource-tab');
   const resourcePanels = document.querySelectorAll('.resource-panel');
 
+  const panelsAnchor = document.getElementById('resource-panels');
+  const isMobileResources = () => window.matchMedia('(max-width: 768px)').matches;
+
   resourceTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const target = tab.dataset.target;
@@ -735,11 +738,12 @@
       const activePanel = document.getElementById(target);
       if (activePanel) {
         activePanel.classList.add('active');
+      }
 
-        const isMobile = window.matchMedia('(max-width: 820px)').matches;
-        if (isMobile) {
-          activePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+      if (panelsAnchor && isMobileResources()) {
+        requestAnimationFrame(() => {
+          panelsAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
       }
     });
   });

@@ -64,6 +64,30 @@ section {
   padding: 88px 0;
 }
 
+.section-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.section-head p {
+  margin: 0;
+  max-width: 640px;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
 /* NAV */
 nav {
   position: sticky;
@@ -566,7 +590,6 @@ nav {
   border-radius: 28px;
   padding: 40px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.28);
-  scroll-margin-top: 96px;
 }
 
 .resource-panel.active {
@@ -705,30 +728,39 @@ nav {
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 768px) {
+  #resource-panels {
+    scroll-margin-top: 92px;
+  }
+
+  .resources-switcher-section {
+    padding-top: 56px;
+    padding-bottom: 24px;
+  }
+
   .resource-tabs {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    padding: 6px 2px 10px;
-    margin-bottom: 18px;
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 28px;
   }
 
   .resource-tab {
-    flex: 0 0 auto;
-    min-width: 78%;
-    padding: 16px 16px;
+    padding: 20px 18px;
   }
 
   .resource-tab__title {
     font-size: 14px;
-    margin-bottom: 0;
   }
 
   .resource-tab__meta {
-    display: none;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 560px) {
+  .resource-tabs {
+    grid-template-columns: 1fr;
   }
 
   .resource-panel {
@@ -845,26 +877,34 @@ footer {
   .preview-main {
     min-height: auto;
   }
-
-  .section-head {
-    flex-direction: column;
-    align-items: start;
-  }
 }
 
 @media (max-width: 640px) {
+  section {
+    padding: 64px 0;
+  }
+
   .container,
   .nav-inner {
-    width: min(var(--container), calc(100% - 32px));
+    width: min(var(--container), calc(100% - 48px));
+  }
+
+  .nav-inner {
+    flex-wrap: nowrap;
+    align-items: center;
   }
 
   .nav-links {
-    gap: 18px;
+    gap: 20px;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
+    margin-right: -4px;
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: flex-end;
   }
 
   .nav-links a {
@@ -874,18 +914,29 @@ footer {
 
   .logo {
     font-size: 17px;
+    flex: 0 0 auto;
+  }
+
+  .section-head h2 {
+    font-size: 28px;
+  }
+
+  .section-head p {
+    font-size: 14px;
+    line-height: 1.65;
   }
 
   .resources-hero {
-    padding: 84px 0 52px;
+    padding: 72px 0 48px;
   }
 
   .hero-title {
-    font-size: 2.7rem;
+    font-size: 2.35rem;
   }
 
   .hero-text {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.65;
   }
 
   .btn {
