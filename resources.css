@@ -566,6 +566,7 @@ nav {
   border-radius: 28px;
   padding: 40px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+  scroll-margin-top: 96px;
 }
 
 .resource-panel.active {
@@ -706,11 +707,32 @@ nav {
 
 @media (max-width: 560px) {
   .resource-tabs {
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 2px 10px;
+    margin-bottom: 18px;
+  }
+
+  .resource-tab {
+    flex: 0 0 auto;
+    min-width: 78%;
+    padding: 16px 16px;
+  }
+
+  .resource-tab__title {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .resource-tab__meta {
+    display: none;
   }
 
   .resource-panel {
-    padding: 22px;
+    padding: 26px 22px;
     border-radius: 22px;
   }
 
