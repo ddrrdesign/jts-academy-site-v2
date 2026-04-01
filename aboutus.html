@@ -16,6 +16,10 @@
     <div class="nav-inner">
       <div class="logo"><span class="first-word">FIRST</span> JTS Academy</div>
 
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        Menu
+      </button>
+
       <div class="nav-links">
             <a href="index.html">Academy</a>
     <a href="resources.html">Resources</a>
@@ -43,6 +47,43 @@
     </p>
   </div>
 </header>
+
+  <script>
+    (() => {
+      const nav = document.querySelector('nav');
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
+      if (!nav || !toggle || !links) return;
+
+      const close = () => {
+        nav.classList.remove('nav--open');
+        toggle.setAttribute('aria-expanded', 'false');
+      };
+
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('nav--open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      links.addEventListener('click', (e) => {
+        const a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (a) close();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!nav.classList.contains('nav--open')) return;
+        if (!nav.contains(e.target)) close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.matchMedia('(min-width: 641px)').matches) close();
+      });
+    })();
+  </script>
 
   <!-- HERO CAROUSEL -->
   <section class="hero-carousel">
